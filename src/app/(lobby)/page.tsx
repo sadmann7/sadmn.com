@@ -11,6 +11,8 @@ import { ProjectCard } from "@/components/project-card"
 import { ProjectCardSkeleton } from "@/components/project-card-skeleton"
 import { Shell } from "@/components/shell"
 
+export const revalidate = 3600
+
 export default async function IndexPage() {
   async function getProjects(
     number: 1 | 2 | 3 | 4 | 5 | 6

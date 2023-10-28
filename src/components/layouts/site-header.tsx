@@ -8,7 +8,7 @@ import { ModeToggle } from "@/components/layouts/mode-toggle"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-background">
+    <header className="w-full bg-background pt-4">
       <div className="container flex h-16 max-w-3xl items-center justify-between">
         <Link href="/" className="font-bold">
           {siteConfig.name}

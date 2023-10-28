@@ -82,24 +82,9 @@ var Author = defineDocumentType(() => ({
   },
   computedFields
 }));
-var Page = defineDocumentType(() => ({
-  name: "Page",
-  filePathPattern: `pages/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true
-    },
-    description: {
-      type: "string"
-    }
-  },
-  computedFields
-}));
 var contentlayer_config_default = makeSource({
   contentDirPath: "./src/content",
-  documentTypes: [Post, Author, Page],
+  documentTypes: [Post, Author],
   mdx: {
     // remarkPlugins: [remarkGfm],
     rehypePlugins: [
@@ -160,8 +145,7 @@ var contentlayer_config_default = makeSource({
 });
 export {
   Author,
-  Page,
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-GL7AO6NZ.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-KL232N3N.mjs.map

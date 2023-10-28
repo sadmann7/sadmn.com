@@ -9,6 +9,6 @@ export const projectSchema = z.object({
   website: z.string().optional(),
   language: z.string(),
   languageColor: z.string(),
-  stars: z.string(),
+  stars: z.union([z.string(), z.number()]),
   forks: z.number(),
 })

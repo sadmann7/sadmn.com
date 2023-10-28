@@ -9,13 +9,13 @@ import { siteConfig } from "@/config/site"
 import { absoluteUrl } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
 import { Mdx } from "@/components/mdx/mdx-components"
+import { MdxPager } from "@/components/mdx/mdx-pager"
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header"
-import { MdxPager } from "@/components/pagers/mdx-pager"
-import { Shell } from "@/components/shells/shell"
+import { Shell } from "@/components/shell"
 
 interface PageProps {
   params: {

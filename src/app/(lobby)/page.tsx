@@ -12,6 +12,7 @@ import { ProjectCardSkeleton } from "@/components/project-card-skeleton"
 import { Shell } from "@/components/shell"
 
 export default async function IndexPage() {
+  // Original source: https://github.com/nexxeln/nexxel.dev/blob/main/src/lib/projects.ts
   async function getProjects(
     number: 1 | 2 | 3 | 4 | 5 | 6
   ): Promise<Project[]> {
@@ -21,7 +22,6 @@ export default async function IndexPage() {
       )
 
       const projects = projectSchema.array().parse(await response.json())
-
       return projects.slice(0, number)
     } catch (err) {
       console.error(err)
@@ -36,7 +36,7 @@ export default async function IndexPage() {
     .sort((a, b) => (a.date > b.date ? -1 : 1))
 
   return (
-    <Shell variant="markdown" className="gap-14">
+    <Shell variant="markdown" className="gap-14 pb-14 md:pb-16">
       <section
         id="about"
         aria-labelledby="about-heading"
@@ -44,16 +44,15 @@ export default async function IndexPage() {
         className="prose prose-neutral dark:prose-invert"
       >
         <p>
-          Hi there, {`I'm`} <span className="font-bold">Sadman</span>, a
-          software engineer building things for the web and mobile. I currently
-          work at{" "}
+          {`I'm`} <span className="font-bold">Sadman</span>, a software engineer
+          building things for the web and mobile. I currently work at{" "}
           <LinkBadge aria-label="Cognosys" href="https://www.cognosys.ai">
             Cognosys
           </LinkBadge>
           , an startup working on AI agents.
         </p>
         <p>
-          Currently, I am working on a side project called{" "}
+          I like building open-source projects. {`I'm`} now building{" "}
           <Link
             href="https://skateshop.sadmn.com"
             target="_blank"
@@ -66,7 +65,7 @@ export default async function IndexPage() {
           <LinkBadge aria-label="Next.js" href="https://nextjs.org/">
             Next.js
           </LinkBadge>
-          .
+          . I also like skating and playing video games.
         </p>
       </section>
       <section

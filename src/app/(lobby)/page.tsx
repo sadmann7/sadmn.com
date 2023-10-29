@@ -76,7 +76,7 @@ export default async function IndexPage() {
       >
         <Link
           aria-label="Projects"
-          href={siteConfig.links.github}
+          href={siteConfig.links.githubProfile}
           target="_blank"
           rel="noopener noreferrer"
           className="prose prose-neutral no-underline dark:prose-invert"

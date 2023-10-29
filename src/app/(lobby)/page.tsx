@@ -11,8 +11,6 @@ import { ProjectCard } from "@/components/project-card"
 import { ProjectCardSkeleton } from "@/components/project-card-skeleton"
 import { Shell } from "@/components/shell"
 
-export const revalidate = 3600
-
 export default async function IndexPage() {
   async function getProjects(
     number: 1 | 2 | 3 | 4 | 5 | 6
@@ -56,7 +54,12 @@ export default async function IndexPage() {
         </p>
         <p>
           Currently, I am working on a side project called{" "}
-          <Link href="https://skateshop.sadmn.com" className="no-underline">
+          <Link
+            href="https://skateshop.sadmn.com"
+            target="_blank"
+            rel="noreferrer"
+            className="no-underline"
+          >
             Skateshop
           </Link>
           , an open-source e-commerce platform built with everything new in{" "}
@@ -73,6 +76,7 @@ export default async function IndexPage() {
         className="space-y-4"
       >
         <Link
+          aria-label="Projects"
           href={siteConfig.links.github}
           target="_blank"
           rel="noopener noreferrer"

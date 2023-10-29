@@ -16,7 +16,7 @@ export function SiteHeader() {
         </Link>
         <nav className="flex items-center space-x-1">
           <Link
-            href={siteConfig.links.github}
+            href={siteConfig.links.githubProfile}
             target="_blank"
             rel="noreferrer"
             className={cn(

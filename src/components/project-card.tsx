@@ -18,12 +18,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Link
-      aria-label={project.repo}
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <Link href={project.link} target="_blank" rel="noopener noreferrer">
+      <span className="sr-only">{project.repo}</span>
       <Card className="flex h-full flex-col">
         <CardHeader className="flex-1">
           <div className="space-y-1">

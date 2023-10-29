@@ -65,7 +65,7 @@ export default async function IndexPage() {
           <LinkBadge aria-label="Next.js" href="https://nextjs.org/">
             Next.js
           </LinkBadge>
-          . I also like skating and playing video games.
+          . I also like skating, and playing video games.
         </p>
       </section>
       <section

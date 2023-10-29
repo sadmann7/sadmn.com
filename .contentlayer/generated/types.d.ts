@@ -33,7 +33,7 @@ export type Post = {
   description?: string | undefined
   date: IsoDateTimeString
   published: boolean
-  image: string
+  image?: string | undefined
   authors: string[]
   /** MDX file body */
   body: MDX

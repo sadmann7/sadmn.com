@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import type { Project } from "@/types"
-import { CircleIcon, StarIcon } from "@radix-ui/react-icons"
+import { StarIcon } from "@radix-ui/react-icons"
 
 import {
   Card,
@@ -11,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Icons } from "@/components/icons"
 
 interface ProjectCardProps {
   project: Project
@@ -32,9 +33,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <CardContent>
           <div className="flex space-x-4 text-sm text-muted-foreground">
             <div className="flex items-center">
-              <CircleIcon
+              <Icons.circle
                 // eslint-disable-next-line tailwindcss/classnames-order, tailwindcss/no-custom-classname
-                className={`mr-1 h-3 w-3 text-[${project.languageColor}]`}
+                className={`mr-1 h-3 w-3 fill-current text-[${project.languageColor}]`}
                 aria-hidden="true"
               />
               {project.language ?? "Unknown"}

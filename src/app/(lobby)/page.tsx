@@ -11,6 +11,8 @@ import { ProjectCard } from "@/components/project-card"
 import { ProjectCardSkeleton } from "@/components/project-card-skeleton"
 import { Shell } from "@/components/shell"
 
+export const revalidate = 3600
+
 export default async function IndexPage() {
   // Original source: https://github.com/nexxeln/nexxel.dev/blob/main/src/lib/projects.ts
   async function getProjects(
@@ -36,7 +38,7 @@ export default async function IndexPage() {
     .sort((a, b) => (a.date > b.date ? -1 : 1))
 
   return (
-    <Shell variant="markdown" className="gap-14 pb-14 md:pb-16">
+    <Shell variant="markdown" className="gap-12 pb-14 pt-4 md:pb-16 md:pt-6">
       <section
         id="about"
         aria-labelledby="about-heading"

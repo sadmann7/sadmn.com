@@ -44,8 +44,7 @@ var Post = defineDocumentType(() => ({
       default: true
     },
     image: {
-      type: "string",
-      required: true
+      type: "string"
     },
     authors: {
       // Reference types are not embedded.
@@ -148,4 +147,4 @@ export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-KL232N3N.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-UBLY3JDO.mjs.map

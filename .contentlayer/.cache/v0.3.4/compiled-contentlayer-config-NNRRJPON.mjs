@@ -45,45 +45,13 @@ var Post = defineDocumentType(() => ({
     },
     image: {
       type: "string"
-    },
-    authors: {
-      // Reference types are not embedded.
-      // Until this is fixed, we can use a simple list.
-      // type: "reference",
-      // of: Author,
-      type: "list",
-      of: { type: "string" },
-      required: true
-    }
-  },
-  computedFields
-}));
-var Author = defineDocumentType(() => ({
-  name: "Author",
-  filePathPattern: `authors/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true
-    },
-    description: {
-      type: "string"
-    },
-    avatar: {
-      type: "string",
-      required: true
-    },
-    twitter: {
-      type: "string",
-      required: true
     }
   },
   computedFields
 }));
 var contentlayer_config_default = makeSource({
   contentDirPath: "./src/content",
-  documentTypes: [Post, Author],
+  documentTypes: [Post],
   mdx: {
     // remarkPlugins: [remarkGfm],
     rehypePlugins: [
@@ -143,8 +111,7 @@ var contentlayer_config_default = makeSource({
   }
 });
 export {
-  Author,
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-UBLY3JDO.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-NNRRJPON.mjs.map

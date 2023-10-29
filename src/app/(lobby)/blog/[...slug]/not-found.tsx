@@ -1,5 +1,5 @@
 import { Shell } from "@/components//shell"
-import { ErrorCard } from "@/components/error-card"
+import { ErrorCard } from "@/components/cards/error-card"
 
 export default function BlogNotFound() {
   return (

@@ -49,46 +49,13 @@ export const Post = defineDocumentType(() => ({
     image: {
       type: "string",
     },
-    authors: {
-      // Reference types are not embedded.
-      // Until this is fixed, we can use a simple list.
-      // type: "reference",
-      // of: Author,
-      type: "list",
-      of: { type: "string" },
-      required: true,
-    },
-  },
-  computedFields,
-}))
-
-export const Author = defineDocumentType(() => ({
-  name: "Author",
-  filePathPattern: `authors/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
-      type: "string",
-    },
-    avatar: {
-      type: "string",
-      required: true,
-    },
-    twitter: {
-      type: "string",
-      required: true,
-    },
   },
   computedFields,
 }))
 
 export default makeSource({
   contentDirPath: "./src/content",
-  documentTypes: [Post, Author],
+  documentTypes: [Post],
   mdx: {
     // remarkPlugins: [remarkGfm],
     rehypePlugins: [

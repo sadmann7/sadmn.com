@@ -5,11 +5,11 @@ import { allPosts } from "contentlayer/generated"
 
 import { siteConfig } from "@/config/site"
 import { projectSchema } from "@/lib/validations/project"
+import { PostCard } from "@/components/cards/post-card"
+import { ProjectCard } from "@/components/cards/project-card"
 import { LinkBadge } from "@/components/link-badge"
-import { PostCard } from "@/components/post-card"
-import { ProjectCard } from "@/components/project-card"
-import { ProjectCardSkeleton } from "@/components/project-card-skeleton"
 import { Shell } from "@/components/shell"
+import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleton"
 
 export const revalidate = 3600
 
@@ -38,7 +38,7 @@ export default async function IndexPage() {
     .sort((a, b) => (a.date > b.date ? -1 : 1))
 
   return (
-    <Shell variant="markdown" className="gap-12 pb-14 pt-4 md:pb-16 md:pt-6">
+    <Shell variant="markdown" className="gap-12 pb-10 md:pb-12">
       <section
         id="about"
         aria-labelledby="about-heading"
@@ -102,6 +102,7 @@ export default async function IndexPage() {
       <section
         id="blog-posts"
         aria-labelledby="blog-posts-heading"
+        aria-describedby="blog-posts-description"
         className="space-y-4"
       >
         <Link

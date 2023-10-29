@@ -1,10 +1,12 @@
+import * as React from "react"
 import { type Metadata } from "next"
 import { env } from "@/env.mjs"
 import { allPosts } from "contentlayer/generated"
 
+import { PostCard } from "@/components/cards/post-card"
 import { PageHeaderHeading } from "@/components/page-header"
-import { PostCard } from "@/components/post-card"
 import { Shell } from "@/components/shell"
+import { PostCardSkeleton } from "@/components/skeletons/post-card-skeleton"
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -18,16 +20,23 @@ export default function BlogPage() {
     .sort((a, b) => (a.date > b.date ? -1 : 1))
 
   return (
-    <Shell variant="markdown" className="md:pb-10">
+    <Shell variant="markdown">
       <PageHeaderHeading size="sm">Blog</PageHeaderHeading>
       <section
-        id="blog-posts"
-        aria-labelledby="blog-posts-heading"
+        id="blog-page"
+        aria-labelledby="blog-page-heading"
+        aria-describedby="blog-page-description"
         className="flex flex-col space-y-6"
       >
-        {posts.map((post) => (
-          <PostCard key={post.slug} post={post} />
-        ))}
+        <React.Suspense
+          fallback={Array.from({ length: 3 }).map((_, i) => (
+            <PostCardSkeleton key={i} />
+          ))}
+        >
+          {posts.map((post) => (
+            <PostCard key={post.slug} post={post} />
+          ))}
+        </React.Suspense>
       </section>
     </Shell>
   )

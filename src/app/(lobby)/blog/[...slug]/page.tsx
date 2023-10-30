@@ -56,7 +56,7 @@ export async function generateMetadata({
     description: post.description,
     authors: [
       {
-        name: "sadman",
+        name: "sadmann7",
         url: "https://sadmn.com",
       },
     ],

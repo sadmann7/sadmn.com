@@ -22,12 +22,17 @@ export const metadata: Metadata = {
     "Next.js",
     "React",
     "Tailwind CSS",
-    "Server Components",
+    "RSC",
     "sadmn.com",
+    "sadmann7",
+    "sadmann17",
+    "sadman",
+    "sadmn",
+    "Sadman Sakib",
   ],
   authors: [
     {
-      name: "sadman",
+      name: "sadmann7",
       url: "https://sadmn.com",
     },
   ],
@@ -44,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/og.jpg`],
+    images: [siteConfig.ogImage],
     creator: "@sadmann17",
   },
   icons: {

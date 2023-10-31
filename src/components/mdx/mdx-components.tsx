@@ -15,17 +15,14 @@ import { MdxImage } from "@/components/mdx/mdx-image"
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
-      className={cn(
-        "mt-2 scroll-m-20 font-heading text-4xl font-bold",
-        className
-      )}
+      className={cn("mt-2 scroll-m-20 font-sans text-4xl font-bold", className)}
       {...props}
     />
   ),
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       className={cn(
-        "mt-12 scroll-m-20 border-b pb-2 font-heading text-2xl font-semibold tracking-tight first:mt-0",
+        "mt-12 scroll-m-20 border-b pb-2 font-sans text-2xl font-semibold tracking-tight first:mt-0",
         className
       )}
       {...props}
@@ -34,7 +31,7 @@ const components = {
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 font-heading text-xl font-semibold tracking-tight",
+        "mt-8 scroll-m-20 font-sans text-xl font-semibold tracking-tight",
         className
       )}
       {...props}
@@ -43,7 +40,7 @@ const components = {
   h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       className={cn(
-        "mt-8 scroll-m-20 font-heading text-lg font-semibold tracking-tight",
+        "mt-8 scroll-m-20 font-sans text-lg font-semibold tracking-tight",
         className
       )}
       {...props}

@@ -3,8 +3,9 @@ import { env } from "@/env.mjs"
 
 import "@/styles/globals.css"
 
+import { GeistMono, GeistSans } from "geist/font"
+
 import { siteConfig } from "@/config/site"
-import { fontHeading, fontMono, fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { Analytics } from "@/components/analytics"
 import { SiteHeader } from "@/components/layouts/site-header"
@@ -65,9 +66,8 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable,
-            fontMono.variable,
-            fontHeading.variable
+            GeistSans.variable,
+            GeistMono.variable
           )}
         >
           <ThemeProvider

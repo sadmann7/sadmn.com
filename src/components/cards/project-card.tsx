@@ -34,8 +34,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <div className="flex space-x-4 text-sm text-muted-foreground">
             <div className="flex items-center">
               <Icons.circle
-                // eslint-disable-next-line tailwindcss/classnames-order, tailwindcss/no-custom-classname
-                className={`mr-1 h-3 w-3 fill-current text-[${project.languageColor}]`}
+                className="mr-1 h-3 w-3 fill-current text-[#3178c6]"
                 aria-hidden="true"
               />
               {project.language ?? "Unknown"}

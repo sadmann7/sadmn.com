@@ -51,7 +51,7 @@ export default async function IndexPage() {
           <LinkBadge aria-label="Cognosys" href="https://www.cognosys.ai">
             Cognosys
           </LinkBadge>
-          , an startup working on AI agents.
+          , a startup working on AI agents.
         </p>
         <p>
           I like building open-source projects. {`I'm`} now building{" "}

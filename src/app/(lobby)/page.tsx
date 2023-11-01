@@ -14,17 +14,19 @@ import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleto
 export const revalidate = 3600
 
 export default async function IndexPage() {
-  // Original source: https://github.com/nexxeln/nexxel.dev/blob/main/src/lib/projects.ts
   async function getProjects(
     number: 1 | 2 | 3 | 4 | 5 | 6
   ): Promise<Project[]> {
     try {
       const response = await fetch(
-        "https://gh-pinned.vercel.app/api/user/sadmann7"
+        `https://api.github.com/users/sadmann7/repos?type=owner&sort=updated&per_page=7`
       )
 
       const projects = projectSchema.array().parse(await response.json())
-      return projects.slice(0, number)
+      const sortedProjects = projects
+        .sort((a, b) => (a.stargazers_count > b.stargazers_count ? -1 : 1))
+        .slice(0, number)
+      return sortedProjects
     } catch (err) {
       console.error(err)
       return []
@@ -93,7 +95,7 @@ export default async function IndexPage() {
           >
             {projects.length > 0
               ? projects.map((project) => (
-                  <ProjectCard key={project.repo} project={project} />
+                  <ProjectCard key={project.name} project={project} />
                 ))
               : null}
           </React.Suspense>

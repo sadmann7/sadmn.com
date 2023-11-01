@@ -21,3 +21,22 @@ export function truncate(str: string, length: number) {
 export function absoluteUrl(path: string) {
   return `${env.NEXT_PUBLIC_APP_URL}${path}`
 }
+
+export function formatNumber(
+  num: number | string,
+  options?: Intl.NumberFormatOptions
+) {
+  const {
+    notation = "compact",
+    compactDisplay = "short",
+    style = "decimal",
+  } = options ?? {}
+
+  const formatedNumber = new Intl.NumberFormat("en-US", {
+    notation,
+    compactDisplay,
+    style,
+  }).format(Number(num))
+
+  return formatedNumber
+}

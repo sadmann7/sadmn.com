@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { env } from "@/env.mjs"
 
 import "@/styles/globals.css"
@@ -20,16 +20,11 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "RSC",
-    "sadmn.com",
+    "nextjs",
+    "react",
+    "react server components",
     "sadmann7",
-    "sadmann17",
     "sadman",
-    "sadmn",
-    "Sadman Sakib",
   ],
   authors: [
     {
@@ -56,6 +51,14 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+}
+
+export const viewport: Viewport = {
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
 }
 
 export default function RootLayout({ children }: React.PropsWithChildren) {

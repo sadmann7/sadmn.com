@@ -4,6 +4,7 @@ import Link from "next/link"
 import type { Project } from "@/types"
 import { StarIcon } from "@radix-ui/react-icons"
 
+import { formatNumber } from "@/lib/utils"
 import {
   Card,
   CardContent,
@@ -19,12 +20,12 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Link href={project.link} target="_blank" rel="noopener noreferrer">
-      <span className="sr-only">{project.repo}</span>
+    <Link href={project.html_url} target="_blank" rel="noopener noreferrer">
+      <span className="sr-only">{project.name}</span>
       <Card className="flex h-full flex-col">
         <CardHeader className="flex-1">
           <div className="space-y-1">
-            <CardTitle className="line-clamp-1">{project.repo}</CardTitle>
+            <CardTitle className="line-clamp-1">{project.name}</CardTitle>
             <CardDescription className="line-clamp-2">
               {project.description ?? "No description provided"}
             </CardDescription>
@@ -41,7 +42,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
             <div className="flex items-center">
               <StarIcon className="mr-1 h-3 w-3" aria-hidden="true" />
-              {project.stars}
+              {formatNumber(project.stargazers_count)}
             </div>
           </div>
         </CardContent>

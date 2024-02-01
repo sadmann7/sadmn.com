@@ -2,7 +2,7 @@ import "server-only"
 
 import { unstable_cache as cache } from "next/cache"
 
-import { projectSchema } from "../validations/project"
+import { projectSchema } from "@/lib/validations/project"
 
 export const getProjects = cache(
   async ({ count }: { count: 1 | 2 | 3 | 4 | 5 | 6 }) => {
@@ -23,6 +23,6 @@ export const getProjects = cache(
   },
   ["projects"],
   {
-    revalidate: 1,
+    revalidate: 3600,
   }
 )

@@ -20,7 +20,11 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Link href={project.html_url} target="_blank" rel="noopener noreferrer">
+    <Link
+      href={project.html_url ?? "/"}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span className="sr-only">{project.name}</span>
       <Card className="flex h-full flex-col">
         <CardHeader className="flex-1">
@@ -35,13 +39,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <div className="flex space-x-4 text-sm text-muted-foreground">
             <div className="flex items-center">
               <Icons.circle
-                className="mr-1 h-3 w-3 fill-current text-[#3178c6]"
+                className="mr-1 size-3 fill-current text-[#3178c6]"
                 aria-hidden="true"
               />
               {project.language ?? "Unknown"}
             </div>
             <div className="flex items-center">
-              <StarIcon className="mr-1 h-3 w-3" aria-hidden="true" />
+              <StarIcon className="mr-1 size-3" aria-hidden="true" />
               {formatNumber(project.stargazers_count)}
             </div>
           </div>

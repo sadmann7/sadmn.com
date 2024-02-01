@@ -16,13 +16,13 @@ export function ProjectCardSkeleton() {
         <div className="flex space-x-4 text-sm text-muted-foreground">
           <div className="flex items-center">
             <CircleIcon
-              className="mr-1 h-3 w-3 fill-sky-400 text-sky-400"
+              className="mr-1 size-3 fill-sky-400 text-sky-400"
               aria-hidden="true"
             />
             <Skeleton className="h-4 w-10" />
           </div>
           <div className="flex items-center">
-            <StarIcon className="mr-1 h-3 w-3" aria-hidden="true" />
+            <StarIcon className="mr-1 size-3" aria-hidden="true" />
             <Skeleton className="h-4 w-10" />
           </div>
         </div>

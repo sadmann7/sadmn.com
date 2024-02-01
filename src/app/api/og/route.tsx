@@ -17,13 +17,15 @@ export function GET(req: Request) {
     return new ImageResponse(
       (
         <div
-          tw="flex h-full w-full flex-col items-center justify-center"
+          tw="flex flex-col items-center justify-center"
           style={{
             color: paint,
             background:
               mode === "dark"
                 ? "linear-gradient(90deg, #000 0%, #111 100%)"
                 : "white",
+            width: "100%",
+            height: "100%",
           }}
         >
           <div

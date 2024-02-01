@@ -19,7 +19,7 @@ export default function IndexPage() {
           building things for the web and mobile.
         </p>
         <p>
-          I like building open-source projects. {`I'm`} now building{" "}
+          I enjoy working on open-source projects. Currently, {`I'm`} building{" "}
           <Link
             href="https://skateshop.sadmn.com"
             target="_blank"
@@ -28,7 +28,7 @@ export default function IndexPage() {
           >
             Skateshop
           </Link>
-          , an open-source e-commerce platform built with everything new in{" "}
+          , an open-source e-commerce platform built with the latest features in{" "}
           <LinkBadge aria-label="Next.js" href="https://nextjs.org/">
             Next.js
           </LinkBadge>

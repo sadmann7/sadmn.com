@@ -3,10 +3,11 @@ import { env } from "@/env.mjs"
 
 import "@/styles/globals.css"
 
-import { GeistMono, GeistSans } from "geist/font"
+import { GeistMono } from "geist/font/mono"
+import { GeistSans } from "geist/font/sans"
 
 import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
+import { absoluteUrl, cn } from "@/lib/utils"
 import { Analytics } from "@/components/analytics"
 import { SiteHeader } from "@/components/layouts/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
@@ -51,6 +52,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  manifest: absoluteUrl("/site.webmanifest"),
 }
 
 export const viewport: Viewport = {

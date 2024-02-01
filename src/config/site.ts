@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
   name: "sadman",
-  description: "Personal website of sadman.",
+  description: "Personal website of sadman, built with Next.js.",
   url: "https://sadmn.com",
   ogImage: "https://sadmn.com/opengraph-image.png",
   links: {

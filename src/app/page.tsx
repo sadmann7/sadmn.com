@@ -1,20 +1,16 @@
 import * as React from "react"
 import Link from "next/link"
-import { allPosts } from "contentlayer/generated"
 
 import { siteConfig } from "@/config/site"
 import { getProjects } from "@/lib/actions/github"
-import { PostCard } from "@/components/cards/post-card"
 import { ProjectCard } from "@/components/cards/project-card"
 import { LinkBadge } from "@/components/link-badge"
+import { Posts } from "@/components/posts"
 import { Shell } from "@/components/shell"
+import { PostCardSkeleton } from "@/components/skeletons/post-card-skeleton"
 import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleton"
 
 export default function IndexPage() {
-  const posts = allPosts
-    .filter((post) => post.published)
-    .sort((a, b) => (a.date > b.date ? -1 : 1))
-
   return (
     <Shell variant="markdown" className="gap-12 pb-10 md:pb-12">
       <section className="prose prose-neutral dark:prose-invert">
@@ -68,9 +64,13 @@ export default function IndexPage() {
           <h3>Blog</h3>
         </Link>
         <div className="flex flex-col space-y-6">
-          {posts.map((post) => (
-            <PostCard key={post.slug} post={post} />
-          ))}
+          <React.Suspense
+            fallback={Array.from({ length: 3 }).map((_, i) => (
+              <PostCardSkeleton key={i} />
+            ))}
+          >
+            <Posts />
+          </React.Suspense>
         </div>
       </section>
     </Shell>

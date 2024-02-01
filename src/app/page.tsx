@@ -59,7 +59,6 @@ export default function IndexPage() {
           </React.Suspense>
         </div>
       </section>
-      <Projects />
       <section className="space-y-4">
         <Link
           aria-label="Blog"
@@ -79,11 +78,11 @@ export default function IndexPage() {
 }
 
 async function Projects() {
-  const projects = await getProjects({ count: 6 })
+  const projects = await getProjects({ count: 4 })
 
   return (
     <>
-      {projects.map((project) => (
+      {projects?.map((project) => (
         <ProjectCard key={project.name} project={project} />
       ))}
     </>

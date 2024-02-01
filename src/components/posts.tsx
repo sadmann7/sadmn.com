@@ -1,8 +1,11 @@
-import { getBlogPosts } from "@/lib/actions/blog"
+import { allPosts } from "contentlayer/generated"
+
 import { PostCard } from "@/components/cards/post-card"
 
 export function Posts() {
-  const posts = getBlogPosts()
+  const posts = allPosts
+    .filter((post) => post.published)
+    .sort((a, b) => (a.date > b.date ? -1 : 1))
 
   return (
     <>

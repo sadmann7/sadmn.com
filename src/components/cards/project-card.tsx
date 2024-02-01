@@ -4,6 +4,7 @@ import Link from "next/link"
 import type { Project } from "@/types"
 import { StarIcon } from "@radix-ui/react-icons"
 
+import { siteConfig } from "@/config/site"
 import { formatNumber } from "@/lib/utils"
 import {
   Card,
@@ -21,7 +22,7 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link
-      href={project.html_url ?? "/"}
+      href={project.html_url ?? siteConfig.links.githubProfile}
       target="_blank"
       rel="noopener noreferrer"
     >

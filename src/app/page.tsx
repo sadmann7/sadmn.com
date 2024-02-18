@@ -4,7 +4,7 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { getProjects } from "@/lib/actions/github"
 import { ProjectCard } from "@/components/cards/project-card"
-import { LinkBadge } from "@/components/link-badge"
+import { LinkBadge } from "@/components/mdx/link-badge"
 import { Posts } from "@/components/posts"
 import { Shell } from "@/components/shell"
 import { PostCardSkeleton } from "@/components/skeletons/post-card-skeleton"
@@ -15,8 +15,8 @@ export default function IndexPage() {
     <Shell variant="markdown" className="gap-12 pb-10 md:pb-12">
       <section className="prose prose-neutral dark:prose-invert">
         <p>
-          {`I'm`} <span className="font-bold">Sadman</span>, a software engineer
-          building things for the web and mobile.
+          {`I'm`} <span className="font-bold">Sadman</span>, building things for
+          the web and mobile.
         </p>
         <p>
           I enjoy working on open-source projects. Currently, {`I'm`} building{" "}

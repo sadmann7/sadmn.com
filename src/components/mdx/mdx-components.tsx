@@ -6,6 +6,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Callout } from "@/components/mdx/callout"
 import { CodeBlock } from "@/components/mdx/code-block"
+import { LinkBadge } from "@/components/mdx/link-badge"
 import { MdxCard } from "@/components/mdx/mdx-card"
 import { MdxImage } from "@/components/mdx/mdx-image"
 
@@ -148,6 +149,7 @@ const components = {
   AlertDescription,
   AspectRatio,
   Card: MdxCard,
+  LinkBadge: LinkBadge,
   ScrollArea,
   Callout,
 }

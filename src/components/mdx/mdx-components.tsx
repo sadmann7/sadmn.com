@@ -3,6 +3,7 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 import { cn } from "@/lib/utils"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import { Callout } from "@/components/mdx/callout"
 import { CodeBlock } from "@/components/mdx/code-block"
 import { MdxCard } from "@/components/mdx/mdx-card"
@@ -147,6 +148,7 @@ const components = {
   AlertDescription,
   AspectRatio,
   Card: MdxCard,
+  ScrollArea,
   Callout,
 }
 
@@ -158,7 +160,7 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code)
 
   return (
-    <div className="mdx">
+    <div className="mdx overflow-hidden">
       <Component components={components} />
     </div>
   )

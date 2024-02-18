@@ -5,6 +5,8 @@ import { notFound } from "next/navigation"
 import { env } from "@/env.mjs"
 import { allPosts } from "contentlayer/generated"
 
+import "@/styles/mdx.css"
+
 import { absoluteUrl, formatDate } from "@/lib/utils"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Skeleton } from "@/components/ui/skeleton"

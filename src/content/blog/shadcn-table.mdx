@@ -25,11 +25,12 @@ This project is built on a robust stack that includes:
 
 The integration of shadcn/ui with Tanstack Table boasts several advanced features:
 
-- **Server-Side Operations**: Pagination, sorting, and filtering are handled server-side, reducing the load on the client and improving performance.
+- **Server-Side Actions**: Pagination, sorting, and filtering are handled server-side, reducing the load on the client and improving performance.
 - **Customizable Columns**: Users can define columns as per their requirements, ensuring flexibility.
 - **Dynamic Inputs**: Search and filters are debounced and faceted, respectively, enhancing the user experience by reducing lag and providing relevant filtering options.
 - **Advanced Filtering**: An optional Notion-like filtering feature allows for complex query building.
-- **Row Selection Actions**: Selected rows can trigger actions such as deletion, with an optional floating bar for context-specific operations.
+- **Row selection Actions**: Selected rows can trigger actions such as deletion, with an optional floating bar for context-specific operations.
+- **Reusability**: The reusable `useDataTable` hook can be used to quickly build tables with server-side actions.
 
 ## Getting Started
 
@@ -67,14 +68,10 @@ To run this project locally:
 
 ## Codebase and Deployment
 
-A comprehensive overview of the codebase is available on [YouTube](https://www.youtube.com/watch?v=BsvjF5Y6-C8&t=1s), and deployment guides for Vercel, Netlify, and Docker can be found in the project's documentation. This ensures that developers can easily share their work and deploy their applications to the web.
+A comprehensive overview of the codebase is available on [YouTube](https://www.youtube.com/watch?v=BsvjF5Y6-C8&t=1s).
 
-## Implementing the Data-table Component
-
-Implementing the data-table component involves cloning the repository, integrating specific folders and files into your project, and configuring environment variables. The documentation provides detailed instructions on setting up database actions, defining table schemas, and configuring table components to interact with your database effectively.
-
-This project is a testament to the power of combining modern web technologies to solve common development challenges. By leveraging shadcn/ui with Tanstack Table, developers can create interactive, efficient, and customizable tables that enhance the user experience and performance of web applications.
+Follow the deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
 
 ## Conclusion
 
-Would like to thank the creators of `shadcn/ui` and `TanStack/react-table` for their excellent work. Really thankfull to Kavin Desi Valli for building the dynamic filtering feature. You'all can check his YouTube channel [here](https://www.youtube.com/@livecode247). This project is a testament to the power of open-source collaboration and the endless possibilities it offers for creating innovative solutions. I hope this project inspires developers to explore new ways of integrating technologies and building robust, user-friendly applications.
+I'm really grateful to Kavin Desi Valli for creating the dynamic filtering function for the table using `drizzle-orm`. Make sure to check out his [YouTube channel](https://www.youtube.com/@livecode247) for more amazing content on web development.

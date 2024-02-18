@@ -7,6 +7,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
+import { codeImport } from "remark-code-import";
 var computedFields = {
   slug: {
     type: "string",
@@ -57,9 +58,11 @@ var contentlayer_config_default = makeSource({
   contentDirPath: "./src/content",
   documentTypes: [Post],
   mdx: {
+    // @ts-expect-error - codeImport types are not compatible with mdx plugins
+    remarkPlugins: [codeImport],
     rehypePlugins: [
       [
-        // @ts-expect-error rehype-pretty-code has no types
+        // @ts-expect-error - rehype-pretty-code types are not compatible with rehype plugins
         rehypePrettyCode,
         {
           theme: {
@@ -81,4 +84,4 @@ export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-YGIPMZOD.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-H56PJYOV.mjs.map

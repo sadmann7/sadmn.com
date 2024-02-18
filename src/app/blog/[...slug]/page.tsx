@@ -22,8 +22,7 @@ interface PostPageProps {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
-async function getPostFromParams(params: PostPageProps["params"]) {
+function getPostFromParams(params: PostPageProps["params"]) {
   const slug = params?.slug?.join("/")
   const post = allPosts.find((post) => post.slugAsParams === slug)
 
@@ -34,10 +33,8 @@ async function getPostFromParams(params: PostPageProps["params"]) {
   return post
 }
 
-export async function generateMetadata({
-  params,
-}: PostPageProps): Promise<Metadata> {
-  const post = await getPostFromParams(params)
+export function generateMetadata({ params }: PostPageProps): Metadata {
+  const post = getPostFromParams(params)
 
   if (!post) {
     return {}
@@ -92,8 +89,8 @@ export async function generateStaticParams(): Promise<
   }))
 }
 
-export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPostFromParams(params)
+export default function PostPage({ params }: PostPageProps) {
+  const post = getPostFromParams(params)
 
   if (!post) {
     notFound()

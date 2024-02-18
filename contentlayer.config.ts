@@ -62,7 +62,7 @@ export default makeSource({
   contentDirPath: "./src/content",
   documentTypes: [Post],
   mdx: {
-    // @ts-expect-error - codeImport types are not compatible with mdx plugins
+    // @ts-expect-error - codeImport types are not compatible with remark plugins
     remarkPlugins: [codeImport],
     rehypePlugins: [
       [

@@ -1,18 +1,14 @@
-import { notFound } from "next/navigation"
-import { allPosts } from "contentlayer/generated"
-
-import { Mdx } from "@/components/mdx/mdx-components"
-
-import "@/styles/mdx.css"
-
 import * as React from "react"
 import { type Metadata } from "next"
 import Image from "next/image"
+import { notFound } from "next/navigation"
 import { env } from "@/env.mjs"
+import { allPosts } from "contentlayer/generated"
 
 import { absoluteUrl, formatDate } from "@/lib/utils"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Skeleton } from "@/components/ui/skeleton"
+import { Mdx } from "@/components/mdx/mdx-components"
 import { PageHeaderHeading } from "@/components/page-header"
 import { Shell } from "@/components/shell"
 

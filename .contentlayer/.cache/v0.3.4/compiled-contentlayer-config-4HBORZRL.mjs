@@ -58,7 +58,7 @@ var contentlayer_config_default = makeSource({
   contentDirPath: "./src/content",
   documentTypes: [Post],
   mdx: {
-    // @ts-expect-error - codeImport types are not compatible with mdx plugins
+    // @ts-expect-error - codeImport types are not compatible with remark plugins
     remarkPlugins: [codeImport],
     rehypePlugins: [
       [
@@ -84,4 +84,4 @@ export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-H56PJYOV.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-4HBORZRL.mjs.map

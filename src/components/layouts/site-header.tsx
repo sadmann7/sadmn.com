@@ -25,11 +25,7 @@ export function SiteHeader() {
             </Link>
           </Button>
           <Button variant="ghost" size="icon" className="size-7">
-            <Link
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <Link href={siteConfig.links.x} target="_blank" rel="noreferrer">
               <Icons.x className="size-3 fill-current" />
               <span className="sr-only">X</span>
             </Link>

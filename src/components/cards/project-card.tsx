@@ -21,13 +21,13 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Link
-      href={project.html_url ?? siteConfig.links.githubProfile}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <span className="sr-only">{project.name}</span>
-      <Card className="flex h-full flex-col">
+    <Card className="rounded-none">
+      <Link
+        href={project.html_url ?? siteConfig.links.githubProfile}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex h-full flex-col transition-colors hover:bg-muted/25"
+      >
         <CardHeader className="flex-1">
           <div className="space-y-1">
             <CardTitle className="line-clamp-1">{project.name}</CardTitle>
@@ -51,7 +51,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
           </div>
         </CardContent>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   )
 }

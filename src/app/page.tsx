@@ -13,13 +13,11 @@ import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleto
 export default function IndexPage() {
   return (
     <Shell variant="markdown" className="gap-12 pb-10 md:pb-12">
-      <section className="prose prose-neutral dark:prose-invert">
-        <p>
+      <section className="prose prose-zinc dark:prose-invert">
+        <p className="leading-loose">
           {`I'm`} <span className="font-bold">Sadman</span>, building things for
-          the web and mobile.
-        </p>
-        <p>
-          I enjoy working on open-source projects. Currently, {`I'm`} building{" "}
+          the web. I enjoy working on open-source projects, playing video games,
+          and skateboarding. Currently, {`I'm`} building{" "}
           <Link
             href="https://skateshop.sadmn.com"
             target="_blank"
@@ -28,23 +26,25 @@ export default function IndexPage() {
           >
             Skateshop
           </Link>
-          , an open-source e-commerce platform built with the latest features in{" "}
-          <LinkBadge aria-label="Next.js" href="https://nextjs.org/">
+          , an open-source e-commerce platform built with the latest{" "}
+          <LinkBadge aria-label="Next.js" href="https://nextjs.org">
             Next.js
-          </LinkBadge>
-          . I also like skating, and playing video games.
+          </LinkBadge>{" "}
+          features.
         </p>
       </section>
       <section className="space-y-4">
-        <Link
-          href={siteConfig.links.githubProfile}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="prose prose-neutral no-underline dark:prose-invert"
-        >
-          <h3>Projects</h3>
-          <span className="sr-only">Projects</span>
-        </Link>
+        <h2 className="prose prose-zinc text-xl font-semibold dark:prose-invert">
+          <Link
+            href={siteConfig.links.githubProfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground/90 no-underline transition-colors hover:text-foreground"
+          >
+            Projects
+            <span className="sr-only">Projects</span>
+          </Link>
+        </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <React.Suspense
             fallback={Array.from({ length: 6 }).map((_, i) => (
@@ -56,13 +56,15 @@ export default function IndexPage() {
         </div>
       </section>
       <section className="space-y-4">
-        <Link
-          aria-label="Blog"
-          href="/blog"
-          className="prose prose-neutral no-underline dark:prose-invert"
-        >
-          <h3>Blog</h3>
-        </Link>
+        <h2 className="prose prose-zinc text-xl font-semibold dark:prose-invert">
+          <Link
+            href="/blog"
+            className="text-foreground/90 no-underline transition-colors hover:text-foreground"
+          >
+            Blog
+            <span className="sr-only">Blog</span>
+          </Link>
+        </h2>
         <div className="flex flex-col space-y-6">
           <React.Suspense
             fallback={Array.from({ length: 3 }).map((_, i) => (

@@ -6,7 +6,7 @@ export const siteConfig = {
   url: "https://sadmn.com",
   ogImage: "https://sadmn.com/opengraph-image.png",
   links: {
-    twitter: "https://twitter.com/sadmann17",
+    x: "https://x.com/sadmann17",
     github: "https://github.com/sadmann7/sadmn.com",
     githubProfile: "https://github.com/sadmann7",
     discord: "https://discord.com/users/sadmann7",

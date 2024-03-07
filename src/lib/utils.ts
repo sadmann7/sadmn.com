@@ -1,4 +1,4 @@
-import { env } from "@/env.mjs"
+import { env } from "@/env.js"
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -6,11 +6,15 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function formatDate(date: Date | string | number) {
+export function formatDate(
+  date: Date | string | number,
+  options: Intl.DateTimeFormatOptions = {}
+) {
   return new Intl.DateTimeFormat("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
+    ...options,
   }).format(new Date(date))
 }
 
@@ -24,18 +28,13 @@ export function absoluteUrl(path: string) {
 
 export function formatNumber(
   num: number | string,
-  options?: Intl.NumberFormatOptions
+  options: Intl.NumberFormatOptions = {}
 ) {
-  const {
-    notation = "compact",
-    compactDisplay = "short",
-    style = "decimal",
-  } = options ?? {}
-
   const formatedNumber = new Intl.NumberFormat("en-US", {
-    notation,
-    compactDisplay,
-    style,
+    notation: options?.notation ?? "compact",
+    compactDisplay: options?.compactDisplay ?? "short",
+    style: options?.style ?? "decimal",
+    ...options,
   }).format(Number(num))
 
   return formatedNumber

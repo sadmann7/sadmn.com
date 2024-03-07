@@ -2,7 +2,7 @@ import * as React from "react"
 import { type Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
-import { env } from "@/env.mjs"
+import { env } from "@/env.js"
 import { allPosts } from "contentlayer/generated"
 
 import "@/styles/mdx.css"

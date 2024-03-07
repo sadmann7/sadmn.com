@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next"
-import { env } from "@/env.mjs"
+import { env } from "@/env.js"
 
 import "@/styles/globals.css"
 
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     creator: "@sadmann17",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
   },
   manifest: absoluteUrl("/site.webmanifest"),
 }

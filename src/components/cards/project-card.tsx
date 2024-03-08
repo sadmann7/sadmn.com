@@ -29,26 +29,22 @@ export function ProjectCard({ project }: ProjectCardProps) {
         className="flex h-full flex-col transition-colors hover:bg-muted/25"
       >
         <CardHeader className="flex-1">
-          <div className="space-y-1">
-            <CardTitle className="line-clamp-1">{project.name}</CardTitle>
-            <CardDescription className="line-clamp-2">
-              {project.description ?? "No description provided"}
-            </CardDescription>
-          </div>
+          <CardTitle className="line-clamp-1">{project.name}</CardTitle>
+          <CardDescription className="line-clamp-2">
+            {project.description ?? "No description provided"}
+          </CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className="flex space-x-4 text-sm text-muted-foreground">
-            <div className="flex items-center">
-              <Icons.circle
-                className="mr-1 size-3 fill-current text-[#3178c6]"
-                aria-hidden="true"
-              />
-              {project.language ?? "Unknown"}
-            </div>
-            <div className="flex items-center">
-              <StarIcon className="mr-1 size-3" aria-hidden="true" />
-              {formatNumber(project.stargazers_count)}
-            </div>
+        <CardContent className="flex space-x-4 text-sm text-muted-foreground">
+          <div className="flex items-center">
+            <Icons.circle
+              className="mr-1 size-3 fill-current text-[#3178c6]"
+              aria-hidden="true"
+            />
+            {project.language ?? "Unknown"}
+          </div>
+          <div className="flex items-center">
+            <StarIcon className="mr-1 size-3" aria-hidden="true" />
+            {formatNumber(project.stargazers_count)}
           </div>
         </CardContent>
       </Link>

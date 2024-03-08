@@ -47,7 +47,7 @@ export default function IndexPage() {
         </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <React.Suspense
-            fallback={Array.from({ length: 6 }).map((_, i) => (
+            fallback={Array.from({ length: 4 }).map((_, i) => (
               <ProjectCardSkeleton key={i} />
             ))}
           >
@@ -67,7 +67,7 @@ export default function IndexPage() {
         </h2>
         <div className="flex flex-col space-y-6">
           <React.Suspense
-            fallback={Array.from({ length: 3 }).map((_, i) => (
+            fallback={Array.from({ length: 4 }).map((_, i) => (
               <PostCardSkeleton key={i} />
             ))}
           >

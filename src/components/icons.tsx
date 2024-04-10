@@ -1,6 +1,6 @@
 import { ImageIcon } from "@radix-ui/react-icons"
 
-type IconProps = React.HTMLAttributes<SVGElement>
+export type IconProps = React.HTMLAttributes<SVGElement>
 
 export const Icons = {
   logo: (props: IconProps) => (

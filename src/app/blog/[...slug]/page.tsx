@@ -25,7 +25,7 @@ function getPostFromParams(params: PostPageProps["params"]) {
   const post = allPosts.find((post) => post.slugAsParams === slug)
 
   if (!post) {
-    null
+    return null
   }
 
   return post

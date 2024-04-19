@@ -5,7 +5,7 @@ import { absoluteUrl } from "@/lib/utils"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const postRoutes = allPosts.map((post) => ({
-    url: absoluteUrl(`${post.slug}`),
+    url: absoluteUrl(post.slug),
     lastModified: new Date().toISOString(),
   }))
 

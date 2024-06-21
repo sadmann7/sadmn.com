@@ -129,7 +129,7 @@ devDependencies:
     version: 1.2.0
   rehype-pretty-code:
     specifier: ^0.13.0
-    version: 0.13.2(shiki@1.7.0)
+    version: 0.13.2(shiki@1.8.0)
   rehype-raw:
     specifier: ^7.0.0
     version: 7.0.0
@@ -147,7 +147,7 @@ devDependencies:
     version: 5.0.7
   shiki:
     specifier: ^1.1.7
-    version: 1.7.0
+    version: 1.8.0
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.4
@@ -1872,8 +1872,8 @@ packages:
     resolution: {integrity: sha512-hw437iINopmQuxWPSUEvqE56NCPsiU8N4AYtfHmJFckclktzK9YQJieD3XkDCDH4OjL+C7zgPUh73R/nrcHrqw==}
     dev: true
 
-  /@shikijs/core@1.7.0:
-    resolution: {integrity: sha512-O6j27b7dGmJbR3mjwh/aHH8Ld+GQvA0OQsNO43wKWnqbAae3AYXrhFyScHGX8hXZD6vX2ngjzDFkZY5srtIJbQ==}
+  /@shikijs/core@1.8.0:
+    resolution: {integrity: sha512-wzVkFzqAVhIOvRTSDwHWVQIpRU66sCjZ/cg5E4bO9jtTEKj94HTRKVVDYgM6ein5KfBCFB61hN3RuSFcpYPq7g==}
     dev: true
 
   /@swc/counter@0.1.3:
@@ -5992,7 +5992,7 @@ packages:
       unified: 11.0.4
     dev: true
 
-  /rehype-pretty-code@0.13.2(shiki@1.7.0):
+  /rehype-pretty-code@0.13.2(shiki@1.8.0):
     resolution: {integrity: sha512-F+PaFMscfJOcSHcR2b//+hk/0jT56hmGDqXcVD6VC9j0CUSGiqv8YxaWUyhR7qEIRRSbzAVxx+0uxzk+akXs+w==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -6002,7 +6002,7 @@ packages:
       hast-util-to-string: 3.0.0
       parse-numeric-range: 1.3.0
       rehype-parse: 9.0.0
-      shiki: 1.7.0
+      shiki: 1.8.0
       unified: 11.0.4
       unist-util-visit: 5.0.0
     dev: true
@@ -6274,10 +6274,10 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  /shiki@1.7.0:
-    resolution: {integrity: sha512-H5pMn4JA7ayx8H0qOz1k2qANq6mZVCMl1gKLK6kWIrv1s2Ial4EmD4s4jE8QB5Dw03d/oCQUxc24sotuyR5byA==}
+  /shiki@1.8.0:
+    resolution: {integrity: sha512-Nyoc/J7bMfJ44rOoVspOYHafTZvvkmLOXRwwj4Wo/QhonIv6SA9WETZE8+2ziVjT956EyfrmXGvYD3RMh1MTfw==}
     dependencies:
-      '@shikijs/core': 1.7.0
+      '@shikijs/core': 1.8.0
     dev: true
 
   /side-channel@1.0.6:

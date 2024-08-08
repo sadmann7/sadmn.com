@@ -64,7 +64,7 @@ dependencies:
     version: 2.4.0
   tailwindcss-animate:
     specifier: ^1.0.7
-    version: 1.0.7(tailwindcss@3.4.8)
+    version: 1.0.7(tailwindcss@3.4.9)
   zod:
     specifier: ^3.22.4
     version: 3.23.8
@@ -75,7 +75,7 @@ devDependencies:
     version: 4.3.1(prettier@3.3.3)
   '@tailwindcss/typography':
     specifier: ^0.5.10
-    version: 0.5.14(tailwindcss@3.4.8)
+    version: 0.5.14(tailwindcss@3.4.9)
   '@total-typescript/ts-reset':
     specifier: ^0.5.1
     version: 0.5.1
@@ -111,7 +111,7 @@ devDependencies:
     version: 9.1.0(eslint@8.57.0)
   eslint-plugin-tailwindcss:
     specifier: ^3.15.1
-    version: 3.17.4(tailwindcss@3.4.8)
+    version: 3.17.4(tailwindcss@3.4.9)
   postcss:
     specifier: ^8.4.35
     version: 8.4.41
@@ -150,7 +150,7 @@ devDependencies:
     version: 1.12.1
   tailwindcss:
     specifier: ^3.4.1
-    version: 3.4.8
+    version: 3.4.9
   typescript:
     specifier: ^5.4.2
     version: 5.5.4
@@ -1933,7 +1933,7 @@ packages:
       zod: 3.23.8
     dev: false
 
-  /@tailwindcss/typography@0.5.14(tailwindcss@3.4.8):
+  /@tailwindcss/typography@0.5.14(tailwindcss@3.4.9):
     resolution: {integrity: sha512-ZvOCjUbsJBjL9CxQBn+VEnFpouzuKhxh2dH8xMIWHILL+HfOYtlAkWcyoon8LlzE53d2Yo6YO6pahKKNW3q1YQ==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -1942,7 +1942,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.8
+      tailwindcss: 3.4.9
     dev: true
 
   /@total-typescript/ts-reset@0.5.1:
@@ -3317,7 +3317,7 @@ packages:
       string.prototype.repeat: 1.0.0
     dev: true
 
-  /eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.8):
+  /eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.9):
     resolution: {integrity: sha512-gJAEHmCq2XFfUP/+vwEfEJ9igrPeZFg+skeMtsxquSQdxba9XRk5bn0Bp9jxG1VV9/wwPKi1g3ZjItu6MIjhNg==}
     engines: {node: '>=18.12.0'}
     peerDependencies:
@@ -3325,7 +3325,7 @@ packages:
     dependencies:
       fast-glob: 3.3.2
       postcss: 8.4.41
-      tailwindcss: 3.4.8
+      tailwindcss: 3.4.9
     dev: true
 
   /eslint-scope@7.2.2:
@@ -6604,16 +6604,16 @@ packages:
     resolution: {integrity: sha512-49AwoOQNKdqKPd9CViyH5wJoSKsCDjUlzL8DxuGp3P1FsGY36NJDAa18jLZcaHAUUuTj+JB8IAo8zWgBNvBF7A==}
     dev: false
 
-  /tailwindcss-animate@1.0.7(tailwindcss@3.4.8):
+  /tailwindcss-animate@1.0.7(tailwindcss@3.4.9):
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 3.4.8
+      tailwindcss: 3.4.9
     dev: false
 
-  /tailwindcss@3.4.8:
-    resolution: {integrity: sha512-GkP17r9GQkxgZ9FKHJQEnjJuKBcbFhMFzKu5slmN6NjlCuFnYJMQ8N4AZ6VrUyiRXlDtPKHkesuQ/MS913Nvdg==}
+  /tailwindcss@3.4.9:
+    resolution: {integrity: sha512-1SEOvRr6sSdV5IDf9iC+NU4dhwdqzF4zKKq3sAbasUWHEM6lsMhX+eNN5gkPx1BvLFEnZQEUFbXnGj8Qlp83Pg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:

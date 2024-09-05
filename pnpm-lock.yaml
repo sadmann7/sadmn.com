@@ -129,7 +129,7 @@ devDependencies:
     version: 1.2.0
   rehype-pretty-code:
     specifier: ^0.14.0
-    version: 0.14.0(shiki@1.16.1)
+    version: 0.14.0(shiki@1.16.2)
   rehype-raw:
     specifier: ^7.0.0
     version: 7.0.0
@@ -147,7 +147,7 @@ devDependencies:
     version: 6.0.1
   shiki:
     specifier: ^1.1.7
-    version: 1.16.1
+    version: 1.16.2
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.10
@@ -1889,8 +1889,8 @@ packages:
     resolution: {integrity: sha512-qC/xYId4NMebE6w/V33Fh9gWxLgURiNYgVNObbJl2LZv0GUUItCcCqC5axQSwRaAgaxl2mELq1rMzlswaQ0Zxg==}
     dev: true
 
-  /@shikijs/core@1.16.1:
-    resolution: {integrity: sha512-aI0hBtw+a6KsJp2jcD4YuQqKpeCbURMZbhHVozDknJpm+KJqeMRkEnfBC8BaKE/5XC+uofPgCLsa/TkTk0Ba0w==}
+  /@shikijs/core@1.16.2:
+    resolution: {integrity: sha512-XSVH5OZCvE4WLMgdoBqfPMYmGHGmCC3OgZhw0S7KcSi2XKZ+5oHGe71GFnTljgdOxvxx5WrRks6QoTLKrl1eAA==}
     dependencies:
       '@shikijs/vscode-textmate': 9.2.0
       '@types/hast': 3.0.4
@@ -6097,7 +6097,7 @@ packages:
       unified: 11.0.5
     dev: true
 
-  /rehype-pretty-code@0.14.0(shiki@1.16.1):
+  /rehype-pretty-code@0.14.0(shiki@1.16.2):
     resolution: {integrity: sha512-hBeKF/Wkkf3zyUS8lal9RCUuhypDWLQc+h9UrP9Pav25FUm/AQAVh4m5gdvJxh4Oz+U+xKvdsV01p1LdvsZTiQ==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -6107,7 +6107,7 @@ packages:
       hast-util-to-string: 3.0.0
       parse-numeric-range: 1.3.0
       rehype-parse: 9.0.0
-      shiki: 1.16.1
+      shiki: 1.16.2
       unified: 11.0.5
       unist-util-visit: 5.0.0
     dev: true
@@ -6379,10 +6379,10 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  /shiki@1.16.1:
-    resolution: {integrity: sha512-tCJIMaxDVB1mEIJ5TvfZU7kCPB5eo9fli5+21Olc/bmyv+w8kye3JOp+LZRmGkAyT71hrkefQhTiY+o9mBikRQ==}
+  /shiki@1.16.2:
+    resolution: {integrity: sha512-gSym0hZf5a1U0iDPsdoOAZbvoi+e0c6c3NKAi03FoSLTm7oG20tum29+gk0wzzivOasn3loxfGUPT+jZXIUbWg==}
     dependencies:
-      '@shikijs/core': 1.16.1
+      '@shikijs/core': 1.16.2
       '@shikijs/vscode-textmate': 9.2.0
       '@types/hast': 3.0.4
     dev: true

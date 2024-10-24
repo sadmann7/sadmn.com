@@ -15,13 +15,11 @@ import { PageHeaderHeading } from "@/components/page-header"
 import { Shell } from "@/components/shell"
 
 interface PostPageProps {
-  params: {
-    slug: string[]
-  }
+  params: Promise<{ slug: string[] }>
 }
 
-function getPostFromParams(params: PostPageProps["params"]) {
-  const slug = params?.slug?.join("/")
+async function getPostFromParams(params: PostPageProps["params"]) {
+  const slug = (await params).slug?.join("/")
   const post = allPosts.find((post) => post.slugAsParams === slug)
 
   if (!post) {
@@ -31,8 +29,10 @@ function getPostFromParams(params: PostPageProps["params"]) {
   return post
 }
 
-export function generateMetadata({ params }: PostPageProps): Metadata {
-  const post = getPostFromParams(params)
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<Metadata> {
+  const post = await getPostFromParams(params)
 
   if (!post) {
     return {}
@@ -78,17 +78,14 @@ export function generateMetadata({ params }: PostPageProps): Metadata {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export async function generateStaticParams(): Promise<
-  PostPageProps["params"][]
-> {
+export async function generateStaticParams() {
   return allPosts.map((post) => ({
     slug: post.slugAsParams.split("/"),
   }))
 }
 
-export default function PostPage({ params }: PostPageProps) {
-  const post = getPostFromParams(params)
+export default async function PostPage({ params }: PostPageProps) {
+  const post = await getPostFromParams(params)
 
   if (!post) {
     notFound()

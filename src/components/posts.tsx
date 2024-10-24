@@ -1,6 +1,6 @@
 import { allPosts } from "contentlayer/generated"
 
-import { PostCard } from "@/components/cards/post-card"
+import { PostCard } from "@/components/post-card"
 
 export function Posts() {
   const posts = allPosts

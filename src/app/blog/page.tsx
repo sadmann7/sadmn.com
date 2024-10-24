@@ -3,9 +3,9 @@ import { type Metadata } from "next"
 import { env } from "@/env.js"
 
 import { PageHeaderHeading } from "@/components/page-header"
+import { PostCardSkeleton } from "@/components/post-card-skeleton"
 import { Posts } from "@/components/posts"
 import { Shell } from "@/components/shell"
-import { PostCardSkeleton } from "@/components/skeletons/post-card-skeleton"
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),

@@ -3,12 +3,12 @@ import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { getProjects } from "@/lib/actions/github"
-import { ProjectCard } from "@/components/cards/project-card"
 import { LinkBadge } from "@/components/mdx/link-badge"
+import { PostCardSkeleton } from "@/components/post-card-skeleton"
 import { Posts } from "@/components/posts"
+import { ProjectCard } from "@/components/project-card"
+import { ProjectCardSkeleton } from "@/components/project-card-skeleton"
 import { Shell } from "@/components/shell"
-import { PostCardSkeleton } from "@/components/skeletons/post-card-skeleton"
-import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleton"
 
 export default function IndexPage() {
   return (

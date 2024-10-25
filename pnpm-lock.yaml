@@ -84,7 +84,7 @@ devDependencies:
     version: 8.56.12
   '@types/node':
     specifier: ^20.11.26
-    version: 20.17.0
+    version: 20.17.1
   '@types/react':
     specifier: ^18.2.65
     version: 18.3.12
@@ -2030,8 +2030,8 @@ packages:
   /@types/ms@0.7.34:
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
-  /@types/node@20.17.0:
-    resolution: {integrity: sha512-a7zRo0f0eLo9K5X9Wp5cAqTUNGzuFLDG2R7C4HY2BhcMAsxgSPuRvAC1ZB6QkuUQXf0YZAgfOX2ZyrBa2n4nHQ==}
+  /@types/node@20.17.1:
+    resolution: {integrity: sha512-j2VlPv1NnwPJbaCNv69FO/1z4lId0QmGvpT41YxitRtWlg96g/j8qcv2RKsLKe2F6OJgyXhupN1Xo17b2m139Q==}
     dependencies:
       undici-types: 6.19.8
 
@@ -5798,7 +5798,7 @@ packages:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.17.0
+      '@types/node': 20.17.1
       long: 5.2.3
     dev: false
 

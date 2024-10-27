@@ -2,7 +2,7 @@ import * as React from "react"
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
-import { getProjects } from "@/lib/actions/github"
+import { getProjects } from "@/lib/queries"
 import { LinkBadge } from "@/components/mdx/link-badge"
 import { PostCardSkeleton } from "@/components/post-card-skeleton"
 import { Posts } from "@/components/posts"

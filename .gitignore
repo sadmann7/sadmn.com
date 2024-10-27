@@ -40,5 +40,5 @@ yarn-error.log*
 
 # typescript
 .source
-.contentlayer
+.content-collections
 *.tsbuildinfo

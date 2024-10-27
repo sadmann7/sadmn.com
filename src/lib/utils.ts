@@ -39,3 +39,22 @@ export function formatNumber(
 
   return formatedNumber
 }
+
+/**
+ * Calculates the reading time of a given text in minutes.
+ * @param text The text to calculate reading time for
+ * @param opts.wordsPerMinute The average reading speed (default: 200)
+ * @returns The estimated reading time in minutes (rounded up)
+ */
+export function getReadingTime(
+  text: string,
+  opts: {
+    wpm: number
+  } = {
+    wpm: 200,
+  }
+): number {
+  const words = text.trim().split(/\s+/).length
+  const minutes = words / opts.wpm
+  return Math.ceil(minutes)
+}

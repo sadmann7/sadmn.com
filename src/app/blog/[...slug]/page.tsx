@@ -3,11 +3,11 @@ import { type Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { env } from "@/env.js"
-import { allPosts } from "contentlayer/generated"
+import { allPosts } from "content-collections"
 
 import "@/styles/mdx.css"
 
-import { absoluteUrl, formatDate } from "@/lib/utils"
+import { absoluteUrl, formatDate, getReadingTime } from "@/lib/utils"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Mdx } from "@/components/mdx/mdx-components"
@@ -20,7 +20,7 @@ interface PostPageProps {
 
 async function getPostFromParams(params: PostPageProps["params"]) {
   const slug = (await params).slug?.join("/")
-  const post = allPosts.find((post) => post.slugAsParams === slug)
+  const post = allPosts.find((post) => post._meta.path === slug)
 
   if (!post) {
     return null
@@ -59,7 +59,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       type: "article",
-      url: absoluteUrl(post.slug),
+      url: absoluteUrl(post._meta.path),
       images: [
         {
           url: ogUrl.toString(),
@@ -80,7 +80,7 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
-    slug: post.slugAsParams.split("/"),
+    slug: post._meta.path.split("/"),
   }))
 }
 
@@ -102,7 +102,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </React.Suspense>
           <div className="text-[0.6rem]">•</div>
           <React.Suspense fallback={<Skeleton className="h-4 w-10" />}>
-            <div>{post.readingTime}min</div>
+            <div>{getReadingTime(post.content)}min</div>
           </React.Suspense>
         </div>
         <PageHeaderHeading size="sm">{post.title}</PageHeaderHeading>
@@ -127,7 +127,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
         }
       >
-        <Mdx code={post.body.code} />
+        <Mdx code={post.mdx} />
       </React.Suspense>
     </Shell>
   )

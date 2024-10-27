@@ -1,16 +1,13 @@
-import { allPosts } from "contentlayer/generated"
-
+import { getPosts } from "@/lib/queries"
 import { PostCard } from "@/components/post-card"
 
-export function Posts() {
-  const posts = allPosts
-    .filter((post) => post.published)
-    .sort((a, b) => (a.date > b.date ? -1 : 1))
+export async function Posts() {
+  const posts = await getPosts()
 
   return (
     <>
       {posts.map((post) => (
-        <PostCard key={post.slug} post={post} />
+        <PostCard key={post._meta.path} post={post} />
       ))}
     </>
   )

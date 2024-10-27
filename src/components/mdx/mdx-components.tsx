@@ -1,4 +1,4 @@
-import { useMDXComponent } from "next-contentlayer/hooks"
+import { useMDXComponent } from "@content-collections/mdx/react"
 
 import { cn } from "@/lib/utils"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"

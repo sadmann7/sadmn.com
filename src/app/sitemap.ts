@@ -1,11 +1,11 @@
 import { type MetadataRoute } from "next"
-import { allPosts } from "contentlayer/generated"
+import { allPosts } from "content-collections"
 
 import { absoluteUrl } from "@/lib/utils"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const postRoutes = allPosts.map((post) => ({
-    url: absoluteUrl(post.slug),
+    url: absoluteUrl(post._meta.path),
     lastModified: new Date().toISOString(),
   }))
 

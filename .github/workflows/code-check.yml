@@ -43,7 +43,7 @@ jobs:
 
       - run: cp .env.example .env.local
 
-      - run: content-collections build
+      - run: pnpm content-collections build
 
       - run: pnpm lint
 
@@ -123,6 +123,6 @@ jobs:
 
       - run: cp .env.example .env.local
 
-      - run: content-collections build
+      - run: pnpm content-collections build
 
       - run: pnpm typecheck

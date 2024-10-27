@@ -14,7 +14,8 @@
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
     "check": "pnpm lint && pnpm typecheck && pnpm format:check",
-    "shadcn:add": "pnpm dlx shadcn-ui@latest add"
+    "shadcn:add": "pnpm dlx shadcn@latest add",
+    "content:build": "pnpm content-collections build"
   },
   "dependencies": {
     "@loglib/tracker": "^0.8.0",
@@ -38,6 +39,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@content-collections/cli": "^0.1.5",
     "@content-collections/core": "^0.7.2",
     "@content-collections/mdx": "^0.2.0",
     "@content-collections/next": "^0.2.3",

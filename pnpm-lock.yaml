@@ -31,7 +31,7 @@ importers:
         version: 1.1.0(@types/react@19.0.1)(react@19.0.0)
       '@t3-oss/env-nextjs':
         specifier: ^0.11.1
-        version: 0.11.1(typescript@5.7.2)(zod@3.23.8)
+        version: 0.11.1(typescript@5.7.2)(zod@3.24.0)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.1
@@ -64,7 +64,7 @@ importers:
         version: 1.0.7(tailwindcss@3.4.16)
       zod:
         specifier: ^3.23.8
-        version: 3.23.8
+        version: 3.24.0
     devDependencies:
       '@content-collections/cli':
         specifier: ^0.1.5
@@ -3423,8 +3423,8 @@ packages:
     resolution: {integrity: sha512-qJNAmSF77lWjfRVwCZK3PcKYWrr+55RUQTiXDxXHGbxzf8WuuRgftIB3hqZ5fykjOF/MC62cazsG/2ZDBedOnQ==}
     engines: {node: '>=14.16'}
 
-  zod@3.23.8:
-    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+  zod@3.24.0:
+    resolution: {integrity: sha512-Hz+wiY8yD0VLA2k/+nsg2Abez674dDGTai33SwNvMPuf9uIrBC9eFgIMQxBBbHFxVXi8W+5nX9DcAh9YNSQm/w==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -3536,7 +3536,7 @@ snapshots:
       tinyglobby: 0.2.10
       typescript: 5.7.2
       yaml: 2.6.0
-      zod: 3.23.8
+      zod: 3.24.0
 
   '@content-collections/integrations@0.2.1(@content-collections/core@0.7.3(typescript@5.7.2))':
     dependencies:
@@ -4282,16 +4282,16 @@ snapshots:
     dependencies:
       tslib: 2.8.0
 
-  '@t3-oss/env-core@0.11.1(typescript@5.7.2)(zod@3.23.8)':
+  '@t3-oss/env-core@0.11.1(typescript@5.7.2)(zod@3.24.0)':
     dependencies:
-      zod: 3.23.8
+      zod: 3.24.0
     optionalDependencies:
       typescript: 5.7.2
 
-  '@t3-oss/env-nextjs@0.11.1(typescript@5.7.2)(zod@3.23.8)':
+  '@t3-oss/env-nextjs@0.11.1(typescript@5.7.2)(zod@3.24.0)':
     dependencies:
-      '@t3-oss/env-core': 0.11.1(typescript@5.7.2)(zod@3.23.8)
-      zod: 3.23.8
+      '@t3-oss/env-core': 0.11.1(typescript@5.7.2)(zod@3.24.0)
+      zod: 3.24.0
     optionalDependencies:
       typescript: 5.7.2
 
@@ -7308,6 +7308,6 @@ snapshots:
 
   yoctocolors@1.0.0: {}
 
-  zod@3.23.8: {}
+  zod@3.24.0: {}
 
   zwitch@2.0.4: {}

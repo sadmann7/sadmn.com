@@ -3,13 +3,11 @@ import type { Metadata, Viewport } from "next";
 
 import "@/styles/globals.css";
 
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
-
 import { Analytics } from "@/components/analytics";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
+import { fontMono, fontSans } from "@/lib/fonts";
 import { absoluteUrl, cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -70,8 +68,8 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
-            GeistSans.variable,
-            GeistMono.variable
+            fontSans.variable,
+            fontMono.variable,
           )}
         >
           <ThemeProvider

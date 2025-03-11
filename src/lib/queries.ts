@@ -9,7 +9,7 @@ export async function getProjects({ count }: { count: 1 | 2 | 3 | 4 | 5 | 6 }) {
   return await unstable_cache(
     async () => {
       const res = await fetch(
-        "https://api.github.com/users/sadmann7/repos?type=owner&sort=updated&per_page=7"
+        "https://api.github.com/users/sadmann7/repos?type=owner&sort=updated&per_page=7",
       );
 
       if (!res.ok) {
@@ -31,7 +31,7 @@ export async function getProjects({ count }: { count: 1 | 2 | 3 | 4 | 5 | 6 }) {
     {
       revalidate: 3600,
       tags: ["projects"],
-    }
+    },
   )();
 }
 
@@ -65,6 +65,6 @@ export async function getPosts({
     {
       revalidate: 86400,
       tags: ["posts"],
-    }
+    },
   )();
 }

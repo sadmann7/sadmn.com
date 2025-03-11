@@ -1,49 +1,49 @@
-import * as React from "react"
-import { type Metadata } from "next"
-import Image from "next/image"
-import { notFound } from "next/navigation"
-import { env } from "@/env.js"
-import { allPosts } from "content-collections"
+import { env } from "@/env.js";
+import { allPosts } from "content-collections";
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import * as React from "react";
 
-import "@/styles/mdx.css"
+import "@/styles/mdx.css";
 
-import { absoluteUrl, formatDate, getReadingTime } from "@/lib/utils"
-import { AspectRatio } from "@/components/ui/aspect-ratio"
-import { Skeleton } from "@/components/ui/skeleton"
-import { Mdx } from "@/components/mdx/mdx-components"
-import { PageHeaderHeading } from "@/components/page-header"
-import { Shell } from "@/components/shell"
+import { Mdx } from "@/components/mdx/mdx-components";
+import { PageHeaderHeading } from "@/components/page-header";
+import { Shell } from "@/components/shell";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Skeleton } from "@/components/ui/skeleton";
+import { absoluteUrl, formatDate, getReadingTime } from "@/lib/utils";
 
 interface PostPageProps {
-  params: Promise<{ slug: string[] }>
+  params: Promise<{ slug: string[] }>;
 }
 
 async function getPostFromParams(params: PostPageProps["params"]) {
-  const slug = (await params).slug?.join("/")
-  const post = allPosts.find((post) => post._meta.path === slug)
+  const slug = (await params).slug?.join("/");
+  const post = allPosts.find((post) => post._meta.path === slug);
 
   if (!post) {
-    return null
+    return null;
   }
 
-  return post
+  return post;
 }
 
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
-  const post = await getPostFromParams(params)
+  const post = await getPostFromParams(params);
 
   if (!post) {
-    return {}
+    return {};
   }
 
-  const url = env.NEXT_PUBLIC_APP_URL
+  const url = env.NEXT_PUBLIC_APP_URL;
 
-  const ogUrl = new URL(`${url}/api/og`)
-  ogUrl.searchParams.set("title", post.title)
-  ogUrl.searchParams.set("type", "Blog Post")
-  ogUrl.searchParams.set("mode", "dark")
+  const ogUrl = new URL(`${url}/api/og`);
+  ogUrl.searchParams.set("title", post.title);
+  ogUrl.searchParams.set("type", "Blog Post");
+  ogUrl.searchParams.set("mode", "dark");
 
   return {
     metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -75,26 +75,26 @@ export async function generateMetadata({
       description: post.description,
       images: [ogUrl.toString()],
     },
-  }
+  };
 }
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
     slug: post._meta.path.split("/"),
-  }))
+  }));
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPostFromParams(params)
+  const post = await getPostFromParams(params);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
     <Shell as="article" variant="markdown">
       <div className="space-y-2">
-        <div className="flex flex-wrap items-center space-x-1.5 text-sm text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-1.5 text-muted-foreground text-sm">
           <React.Suspense fallback={<Skeleton className="h-4 w-32" />}>
             <time dateTime={post.date} className="block">
               {formatDate(post.date)}
@@ -130,5 +130,5 @@ export default async function PostPage({ params }: PostPageProps) {
         <Mdx code={post.mdx} />
       </React.Suspense>
     </Shell>
-  )
+  );
 }

@@ -1,9 +1,7 @@
-import * as React from "react"
-import Link from "next/link"
-import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
+import Link from "next/link";
+import type * as React from "react";
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,20 +9,21 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { ClientButton } from "@/components/client-button"
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { AlertTriangle } from "lucide-react";
 
 interface ErrorCardProps extends React.ComponentPropsWithoutRef<typeof Card> {
-  icon?: React.ComponentType<{ className?: string }>
-  title: string
-  description: string
-  retryLink?: string
-  retryLinkText?: string
-  reset?: () => void
+  icon?: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+  retryLink?: string;
+  retryLinkText?: string;
+  reset?: () => void;
 }
 
 export function ErrorCard({
-  icon: Icon = ExclamationTriangleIcon,
+  icon: Icon = AlertTriangle,
   title,
   description,
   retryLink,
@@ -59,7 +58,7 @@ export function ErrorCard({
             className={cn(
               buttonVariants({
                 variant: "ghost",
-              })
+              }),
             )}
           >
             {retryLinkText}
@@ -69,11 +68,11 @@ export function ErrorCard({
       ) : null}
       {reset ? (
         <CardFooter>
-          <ClientButton aria-label="Retry" variant="ghost" onClick={reset}>
+          <Button aria-label="Retry" variant="ghost" onClick={reset}>
             Retry
-          </ClientButton>
+          </Button>
         </CardFooter>
       ) : null}
     </Card>
-  )
+  );
 }

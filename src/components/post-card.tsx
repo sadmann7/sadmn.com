@@ -1,8 +1,8 @@
-import Link from "next/link"
-import type { Post } from "content-collections"
+import type { Post } from "content-collections";
+import Link from "next/link";
 
 interface PostCardProps {
-  post: Post
+  post: Post;
 }
 
 export function PostCard({ post }: PostCardProps) {
@@ -10,15 +10,15 @@ export function PostCard({ post }: PostCardProps) {
     <article>
       <Link
         href={`/blog/${post._meta.path}`}
-        className="group flex flex-col space-y-1.5"
+        className="group flex flex-col gap-1.5"
       >
         <h2 className="line-clamp-1 font-semibold text-foreground/80 transition-colors group-hover:text-foreground">
           {post.title}
         </h2>
-        <p className="line-clamp-1 text-sm text-muted-foreground">
+        <p className="line-clamp-1 text-muted-foreground text-sm">
           {post.description}
         </p>
       </Link>
     </article>
-  )
+  );
 }

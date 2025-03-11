@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function ProjectCardSkeleton() {
   return (
@@ -8,7 +8,7 @@ export function ProjectCardSkeleton() {
         <Skeleton className="h-4 w-[30%]" />
         <Skeleton className="h-4 w-full" />
       </CardHeader>
-      <CardContent className="flex space-x-4 text-sm text-muted-foreground">
+      <CardContent className="flex items-center gap-4 text-muted-foreground text-sm">
         <div className="flex items-center">
           <Skeleton className="mr-1 size-3.5" />
           <Skeleton className="h-4 w-10" />
@@ -19,5 +19,5 @@ export function ProjectCardSkeleton() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

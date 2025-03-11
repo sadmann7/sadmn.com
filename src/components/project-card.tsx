@@ -1,22 +1,24 @@
-// Modified from: https://github.com/shadcn-ui/ui/blob/main/apps/www/app/examples/cards/components/github-card.tsx
+/**
+ * @see https://github.com/shadcn-ui/ui/blob/main/apps/www/app/examples/cards/components/github-card.tsx
+ */
 
-import Link from "next/link"
-import type { Project } from "@/types"
-import { StarIcon } from "@radix-ui/react-icons"
+import type { Project } from "@/types";
+import Link from "next/link";
 
-import { siteConfig } from "@/config/site"
-import { formatNumber } from "@/lib/utils"
+import { Icons } from "@/components/icons";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Icons } from "@/components/icons"
+} from "@/components/ui/card";
+import { siteConfig } from "@/config/site";
+import { formatNumber } from "@/lib/utils";
+import { StarIcon } from "lucide-react";
 
 interface ProjectCardProps {
-  project: Project
+  project: Project;
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
@@ -34,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.description ?? "No description provided"}
           </CardDescription>
         </CardHeader>
-        <CardContent className="flex space-x-4 text-sm text-muted-foreground">
+        <CardContent className="flex items-center gap-4 text-muted-foreground text-sm">
           <div className="flex items-center">
             <Icons.circle
               className="mr-1 size-3 fill-current text-[#3178c6]"
@@ -42,12 +44,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
             />
             {project.language ?? "Unknown"}
           </div>
-          <div className="flex items-center">
-            <StarIcon className="mr-1 size-3" aria-hidden="true" />
+          <div className="flex items-center gap-1">
+            <StarIcon className="size-3" />
             {formatNumber(project.stargazers_count)}
           </div>
         </CardContent>
       </Link>
     </Card>
-  )
+  );
 }

@@ -1,17 +1,17 @@
-import * as React from "react"
-import { type Metadata } from "next"
-import { env } from "@/env.js"
+import { env } from "@/env.js";
+import type { Metadata } from "next";
+import * as React from "react";
 
-import { PageHeaderHeading } from "@/components/page-header"
-import { PostCardSkeleton } from "@/components/post-card-skeleton"
-import { Posts } from "@/components/posts"
-import { Shell } from "@/components/shell"
+import { PageHeaderHeading } from "@/components/page-header";
+import { PostCardSkeleton } from "@/components/post-card-skeleton";
+import { Posts } from "@/components/posts";
+import { Shell } from "@/components/shell";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: "Blog",
   description: "My blog posts",
-}
+};
 
 export default function BlogPage() {
   return (
@@ -27,5 +27,5 @@ export default function BlogPage() {
         </React.Suspense>
       </section>
     </Shell>
-  )
+  );
 }

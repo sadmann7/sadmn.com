@@ -1,43 +1,43 @@
-import { env } from "@/env.js"
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { env } from "@/env.js";
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function formatDate(
   date: Date | string | number,
-  options: Intl.DateTimeFormatOptions = {}
+  options: Intl.DateTimeFormatOptions = {},
 ) {
   return new Intl.DateTimeFormat("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
     ...options,
-  }).format(new Date(date))
+  }).format(new Date(date));
 }
 
 export function truncate(str: string, length: number) {
-  return str.length > length ? `${str.substring(0, length)}...` : str
+  return str.length > length ? `${str.substring(0, length)}...` : str;
 }
 
 export function absoluteUrl(path: string) {
-  return `${env.NEXT_PUBLIC_APP_URL}${path}`
+  return `${env.NEXT_PUBLIC_APP_URL}${path}`;
 }
 
 export function formatNumber(
   num: number | string,
-  options: Intl.NumberFormatOptions = {}
+  options: Intl.NumberFormatOptions = {},
 ) {
   const formatedNumber = new Intl.NumberFormat("en-US", {
     notation: options?.notation ?? "compact",
     compactDisplay: options?.compactDisplay ?? "short",
     style: options?.style ?? "decimal",
     ...options,
-  }).format(Number(num))
+  }).format(Number(num));
 
-  return formatedNumber
+  return formatedNumber;
 }
 
 /**
@@ -49,12 +49,12 @@ export function formatNumber(
 export function getReadingTime(
   text: string,
   opts: {
-    wpm: number
+    wpm: number;
   } = {
     wpm: 200,
-  }
+  },
 ): number {
-  const words = text.trim().split(/\s+/).length
-  const minutes = words / opts.wpm
-  return Math.ceil(minutes)
+  const words = text.trim().split(/\s+/).length;
+  const minutes = words / opts.wpm;
+  return Math.ceil(minutes);
 }

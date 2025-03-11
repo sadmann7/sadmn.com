@@ -1,8 +1,8 @@
-import { getPosts } from "@/lib/queries"
-import { PostCard } from "@/components/post-card"
+import { PostCard } from "@/components/post-card";
+import { getPosts } from "@/lib/queries";
 
 export async function Posts() {
-  const posts = await getPosts()
+  const posts = await getPosts();
 
   return (
     <>
@@ -10,5 +10,5 @@ export async function Posts() {
         <PostCard key={post._meta.path} post={post} />
       ))}
     </>
-  )
+  );
 }

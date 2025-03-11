@@ -1,4 +1,4 @@
-import * as z from "zod"
+import * as z from "zod";
 
 export const projectSchema = z.object({
   name: z.string().optional().nullable(),
@@ -8,4 +8,4 @@ export const projectSchema = z.object({
   language: z.string().optional().nullable(),
   stargazers_count: z.union([z.string(), z.number()]),
   forks_count: z.number(),
-})
+});

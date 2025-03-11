@@ -1,31 +1,31 @@
-import { useMDXComponent } from "@content-collections/mdx/react"
-
-import { cn } from "@/lib/utils"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { AspectRatio } from "@/components/ui/aspect-ratio"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Callout } from "@/components/mdx/callout"
-import { CodeBlock } from "@/components/mdx/code-block"
-import { LinkBadge } from "@/components/mdx/link-badge"
-import { MdxCard } from "@/components/mdx/mdx-card"
-import { MdxImage } from "@/components/mdx/mdx-image"
-
-/** Originally from `shadcn/ui-docs`
- * @link https://github.com/shadcn/ui/blob/main/apps/www/components/mdx-components.tsx
+/**
+ * @see https://github.com/shadcn/ui/blob/main/apps/www/components/mdx-components.tsx
  */
+
+import { useMDXComponent } from "@content-collections/mdx/react";
+
+import { Callout } from "@/components/mdx/callout";
+import { CodeBlock } from "@/components/mdx/code-block";
+import { LinkBadge } from "@/components/mdx/link-badge";
+import { MdxCard } from "@/components/mdx/mdx-card";
+import { MdxImage } from "@/components/mdx/mdx-image";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
-      className={cn("mt-2 scroll-m-20 font-sans text-4xl font-bold", className)}
+      className={cn("mt-2 scroll-m-20 font-bold font-sans text-4xl", className)}
       {...props}
     />
   ),
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       className={cn(
-        "mt-12 scroll-m-20 border-b pb-2 font-sans text-2xl font-semibold tracking-tight first:mt-0",
-        className
+        "mt-12 scroll-m-20 border-b pb-2 font-sans font-semibold text-2xl tracking-tight first:mt-0",
+        className,
       )}
       {...props}
     />
@@ -33,8 +33,8 @@ const components = {
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 font-sans text-xl font-semibold tracking-tight",
-        className
+        "mt-8 scroll-m-20 font-sans font-semibold text-xl tracking-tight",
+        className,
       )}
       {...props}
     />
@@ -42,8 +42,8 @@ const components = {
   h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       className={cn(
-        "mt-8 scroll-m-20 font-sans text-lg font-semibold tracking-tight",
-        className
+        "mt-8 scroll-m-20 font-sans font-semibold text-lg tracking-tight",
+        className,
       )}
       {...props}
     />
@@ -51,8 +51,8 @@ const components = {
   h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h5
       className={cn(
-        "mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
-        className
+        "mt-8 scroll-m-20 font-semibold text-lg tracking-tight",
+        className,
       )}
       {...props}
     />
@@ -60,8 +60,8 @@ const components = {
   h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h6
       className={cn(
-        "mt-8 scroll-m-20 text-base font-semibold tracking-tight",
-        className
+        "mt-8 scroll-m-20 font-semibold text-base tracking-tight",
+        className,
       )}
       {...props}
     />
@@ -119,7 +119,7 @@ const components = {
     <th
       className={cn(
         "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
-        className
+        className,
       )}
       {...props}
     />
@@ -128,7 +128,7 @@ const components = {
     <td
       className={cn(
         "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
-        className
+        className,
       )}
       {...props}
     />
@@ -138,7 +138,7 @@ const components = {
     <code
       className={cn(
         "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm",
-        className
+        className,
       )}
       {...props}
     />
@@ -152,18 +152,18 @@ const components = {
   LinkBadge: LinkBadge,
   ScrollArea,
   Callout,
-}
+};
 
 interface MdxProps {
-  code: string
+  code: string;
 }
 
 export function Mdx({ code }: MdxProps) {
-  const Component = useMDXComponent(code)
+  const Component = useMDXComponent(code);
 
   return (
     <div className="mdx overflow-hidden">
       <Component components={components} />
     </div>
-  )
+  );
 }

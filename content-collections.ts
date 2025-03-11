@@ -1,5 +1,5 @@
-import { defineCollection, defineConfig } from "@content-collections/core"
-import { compileMDX } from "@content-collections/mdx"
+import { defineCollection, defineConfig } from "@content-collections/core";
+import { compileMDX } from "@content-collections/mdx";
 
 const posts = defineCollection({
   name: "posts",
@@ -13,14 +13,14 @@ const posts = defineCollection({
     image: z.string().optional(),
   }),
   transform: async (document, context) => {
-    const mdx = await compileMDX(context, document)
+    const mdx = await compileMDX(context, document);
     return {
       ...document,
       mdx,
-    }
+    };
   },
-})
+});
 
 export default defineConfig({
   collections: [posts],
-})
+});

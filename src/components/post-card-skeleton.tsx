@@ -1,4 +1,4 @@
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function PostCardSkeleton() {
   return (
@@ -6,5 +6,5 @@ export function PostCardSkeleton() {
       <Skeleton className="h-4 w-[30%]" />
       <Skeleton className="h-4 w-full" />
     </article>
-  )
+  );
 }

@@ -1,17 +1,16 @@
-import type { Metadata, Viewport } from "next"
-import { env } from "@/env.js"
+import { env } from "@/env.js";
+import type { Metadata, Viewport } from "next";
 
-import "@/styles/globals.css"
+import "@/styles/globals.css";
 
-import { GeistMono } from "geist/font/mono"
-import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 
-import { siteConfig } from "@/config/site"
-import { absoluteUrl, cn } from "@/lib/utils"
-import { Analytics } from "@/components/analytics"
-import { SiteHeader } from "@/components/layouts/site-header"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
+import { Analytics } from "@/components/analytics";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { ThemeProvider } from "@/components/theme-provider";
+import { siteConfig } from "@/config/site";
+import { absoluteUrl, cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -53,7 +52,7 @@ export const metadata: Metadata = {
     icon: "/icon.png",
   },
   manifest: absoluteUrl("/site.webmanifest"),
-}
+};
 
 export const viewport: Viewport = {
   colorScheme: "dark light",
@@ -61,7 +60,7 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
-}
+};
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
@@ -82,7 +81,6 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
             disableTransitionOnChange
           >
             <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
               <main className="flex-1">{children}</main>
             </div>
             <TailwindIndicator />
@@ -91,5 +89,5 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         </body>
       </html>
     </>
-  )
+  );
 }

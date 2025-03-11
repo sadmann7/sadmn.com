@@ -1,11 +1,11 @@
 // Modified from: https://github.com/shadcn-ui/ui/blob/main/apps/www/components/page-header.tsx
 
-import { cva, type VariantProps } from "class-variance-authority"
+import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 interface PageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-  as?: React.ElementType
+  as?: React.ElementType;
 }
 
 function PageHeader({
@@ -18,7 +18,7 @@ function PageHeader({
     <Comp className={cn("flex flex-col gap-1", className)} {...props}>
       {children}
     </Comp>
-  )
+  );
 }
 
 const headingVariants = cva(
@@ -34,13 +34,13 @@ const headingVariants = cva(
     defaultVariants: {
       size: "default",
     },
-  }
-)
+  },
+);
 
 interface PageHeaderHeadingProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
     VariantProps<typeof headingVariants> {
-  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
 
 function PageHeaderHeading({
@@ -51,7 +51,7 @@ function PageHeaderHeading({
 }: PageHeaderHeadingProps) {
   return (
     <Comp className={cn(headingVariants({ size, className }))} {...props} />
-  )
+  );
 }
 
 const descriptionVariants = cva("text-balance text-muted-foreground", {
@@ -65,7 +65,7 @@ const descriptionVariants = cva("text-balance text-muted-foreground", {
   defaultVariants: {
     size: "default",
   },
-})
+});
 
 interface PageHeaderDescriptionProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
@@ -78,7 +78,7 @@ function PageHeaderDescription({
 }: PageHeaderDescriptionProps) {
   return (
     <p className={cn(descriptionVariants({ size, className }))} {...props} />
-  )
+  );
 }
 
-export { PageHeader, PageHeaderDescription, PageHeaderHeading }
+export { PageHeader, PageHeaderDescription, PageHeaderHeading };

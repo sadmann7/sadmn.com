@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./mdx.css";
 
 @plugin "tailwindcss-animate";
 

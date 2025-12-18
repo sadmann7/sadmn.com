@@ -5,8 +5,6 @@ import { notFound } from "next/navigation";
 import * as React from "react";
 import { env } from "@/env.js";
 
-import "@/styles/mdx.css";
-
 import { Mdx } from "@/components/mdx/mdx-components";
 import { PageHeaderHeading } from "@/components/page-header";
 import { Shell } from "@/components/shell";

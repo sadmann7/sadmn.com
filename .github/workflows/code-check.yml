@@ -54,4 +54,7 @@ jobs:
           version: 10.26.0
       - uses: ./.github/setup
 
+      - name: Build content collections
+        run: pnpm content:build
+
       - run: pnpm typecheck

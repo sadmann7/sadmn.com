@@ -8,8 +8,7 @@ await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  // Already doing linting and typechecking as separate tasks in CI
-  eslint: { ignoreDuringBuilds: true },
+  // Already doing typechecking as separate tasks in CI
   typescript: { ignoreBuildErrors: true },
 };
 

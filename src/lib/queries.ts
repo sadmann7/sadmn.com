@@ -1,6 +1,6 @@
 import "server-only";
 
-import { type Post, allPosts } from "content-collections";
+import { allPosts, type Post } from "content-collections";
 
 import { unstable_cache } from "@/lib/unstable-cache";
 import { projectSchema } from "@/lib/validations/project";

@@ -2,7 +2,7 @@
  * @see https://github.com/shadcn-ui/ui/blob/main/apps/www/app/examples/cards/components/github-card.tsx
  */
 
-import type { Project } from "@/types";
+import { StarIcon } from "lucide-react";
 import Link from "next/link";
 
 import { Icons } from "@/components/icons";
@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/card";
 import { siteConfig } from "@/config/site";
 import { formatNumber } from "@/lib/utils";
-import { StarIcon } from "lucide-react";
+import type { Project } from "@/types";
 
 interface ProjectCardProps {
   project: Project;

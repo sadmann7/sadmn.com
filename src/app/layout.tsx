@@ -1,5 +1,5 @@
-import { env } from "@/env.js";
 import type { Metadata, Viewport } from "next";
+import { env } from "@/env.js";
 
 import "@/styles/globals.css";
 
@@ -62,30 +62,28 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable,
-            fontMono.variable,
-          )}
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+          fontMono.variable,
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="relative flex min-h-screen flex-col">
-              <main className="flex-1">{children}</main>
-            </div>
-            <TailwindIndicator />
-            <Analytics />
-          </ThemeProvider>
-        </body>
-      </html>
-    </>
+          <div className="relative flex min-h-screen flex-col">
+            <main className="flex-1">{children}</main>
+          </div>
+          <TailwindIndicator />
+          <Analytics />
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

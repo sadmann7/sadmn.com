@@ -93,7 +93,7 @@ const components = {
     alt,
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    // biome-ignore lint/performance/noImgElement: MDX requires native img element for markdown images
+    // biome-ignore lint/performance/noImgElement: we need to use the native img element for markdown images
     <img className={cn("rounded-md", className)} alt={alt} {...props} />
   ),
   hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (

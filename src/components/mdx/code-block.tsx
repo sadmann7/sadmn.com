@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckIcon, CopyIcon } from "lucide-react";
+import { CheckIcon, CopyIcon, FileTextIcon } from "lucide-react";
 import * as React from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
@@ -12,13 +12,14 @@ interface CodeBlockProps extends React.ComponentProps<"pre"> {
 }
 
 export function CodeBlock({ children, ...props }: CodeBlockProps) {
-  const language = props["data-language"] ?? "typescript";
-  const theme = props["data-theme"] ?? "dark";
+  const language = props["data-language"] ?? "plaintext";
+  const theme = props["data-theme"];
 
   const Icon = {
     js: Icons.javascript,
     ts: Icons.typescript,
     bash: Icons.bash,
+    plaintext: FileTextIcon,
   }[language];
 
   const contentRef = React.useRef<HTMLSpanElement>(null);
@@ -32,7 +33,7 @@ export function CodeBlock({ children, ...props }: CodeBlockProps) {
       {Icon && (
         <Icon
           data-language-icon
-          data-theme={theme}
+          {...(theme && { "data-theme": theme })}
           className="size-5 text-foreground"
         />
       )}

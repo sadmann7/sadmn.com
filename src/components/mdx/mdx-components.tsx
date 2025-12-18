@@ -1,13 +1,11 @@
 /**
- * @see https://github.com/shadcn/ui/blob/main/apps/www/components/mdx-components.tsx
+ * @see https://github.com/shadcn-ui/ui/blob/main/apps/v4/mdx-components.tsx
  */
 
 import { useMDXComponent } from "@content-collections/mdx/react";
 
-import { Callout } from "@/components/mdx/callout";
 import { CodeBlock } from "@/components/mdx/code-block";
 import { LinkBadge } from "@/components/mdx/link-badge";
-import { MdxCard } from "@/components/mdx/mdx-card";
 import { MdxImage } from "@/components/mdx/mdx-image";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -95,7 +93,7 @@ const components = {
     alt,
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    // eslint-disable-next-line @next/next/no-img-element
+    // biome-ignore lint/performance/noImgElement: MDX requires native img element for markdown images
     <img className={cn("rounded-md", className)} alt={alt} {...props} />
   ),
   hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
@@ -115,7 +113,7 @@ const components = {
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th
       className={cn(
-        "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right",
         className,
       )}
       {...props}
@@ -124,7 +122,7 @@ const components = {
   td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td
       className={cn(
-        "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right",
         className,
       )}
       {...props}
@@ -145,10 +143,8 @@ const components = {
   AlertTitle,
   AlertDescription,
   AspectRatio,
-  Card: MdxCard,
   LinkBadge: LinkBadge,
   ScrollArea,
-  Callout,
 };
 
 interface MdxProps {

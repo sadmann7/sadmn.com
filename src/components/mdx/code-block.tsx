@@ -1,22 +1,20 @@
 "use client";
 
+import { CheckIcon, CopyIcon } from "lucide-react";
 import * as React from "react";
-
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { CheckIcon, CopyIcon } from "lucide-react";
 
-interface CodeBlockProps extends React.HTMLProps<HTMLPreElement> {
-  // set by `rehype-pretty-code`
+interface CodeBlockProps extends React.ComponentProps<"pre"> {
   "data-language"?: string;
-  // set by `rehype-pretty-code`
   "data-theme"?: string;
 }
 
 export function CodeBlock({ children, ...props }: CodeBlockProps) {
-  const language = props["data-language"] as string;
-  const theme = props["data-theme"] as string;
+  const language = props["data-language"] ?? "typescript";
+  const theme = props["data-theme"] ?? "dark";
+
   const Icon = {
     js: Icons.javascript,
     ts: Icons.typescript,

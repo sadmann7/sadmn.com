@@ -1,6 +1,6 @@
+import { AlertTriangle } from "lucide-react";
 import Link from "next/link";
 import type * as React from "react";
-
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -11,7 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { AlertTriangle } from "lucide-react";
 
 interface ErrorCardProps extends React.ComponentPropsWithoutRef<typeof Card> {
   icon?: React.ComponentType<{ className?: string }>;

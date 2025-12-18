@@ -1,15 +1,16 @@
 {
-  "tailwindCSS.includeLanguages": {
-    "plaintext": "html"
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit"
   },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "biomejs.biome",
+  "tailwindCSS.validate": true,
+  "tailwindCSS.lint.cssConflict": "ignore",
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["tw=\"([^\"]*)\""]
+    ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
-  "markdownlint.config": {
-    "MD033": {
-      "allowed_elements": ["img", "p", "a"]
-    }
-  }
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

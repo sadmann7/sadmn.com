@@ -1,9 +1,9 @@
-import { env } from "@/env.js";
 import { allPosts } from "content-collections";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import * as React from "react";
+import { env } from "@/env.js";
 
 import "@/styles/mdx.css";
 

@@ -3,13 +3,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import * as React from "react";
-import { env } from "@/env.js";
-
 import { Mdx } from "@/components/mdx/mdx-components";
 import { PageHeaderHeading } from "@/components/page-header";
 import { Shell } from "@/components/shell";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Skeleton } from "@/components/ui/skeleton";
+import { env } from "@/env.js";
 import { absoluteUrl, formatDate, getReadingTime } from "@/lib/utils";
 
 interface PostPageProps {

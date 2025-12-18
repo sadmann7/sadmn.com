@@ -189,7 +189,7 @@
 }
 
 [data-rehype-pretty-code-fragment] .line {
-  @apply inline-block min-h-[1rem] w-full px-4 py-0.5;
+  @apply inline-block min-h-4 w-full px-4 py-0.5;
 }
 
 [data-rehype-pretty-code-fragment] [data-line-numbers] .line {
